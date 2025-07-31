@@ -3,7 +3,5 @@ CREATE OR REPLACE TABLE b_table (
     type INTEGER NOT NULL,
     name VARCHAR(100),
     created_date TIMESTAMP_NTZ DEFAULT CURRENT_TIMESTAMP(),
-    status VARCHAR(20) DEFAULT 'ACTIVE',
-
-    CONSTRAINT type_range CHECK (type >= 1 AND type <= 5)
+    status VARCHAR(20) DEFAULT 'ACTIVE'
 );
