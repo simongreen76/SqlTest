@@ -1,12 +1,7 @@
-CREATE OR REPLACE SEQUENCE automobile_id_seq
-    START = 1
-    INCREMENT = 1
-    COMMENT = 'Sequence for automobile primary keys';
-
-CREATE OR REPLACE TABLE automobile (
-    automobile_id NUMBER DEFAULT automobile_id_seq.NEXTVAL,
-    make VARCHAR(50) NOT NULL,
-    model VARCHAR(100) NOT NULL,
-
-    CONSTRAINT pk_automobile PRIMARY KEY (automobile_id)
-)
+CREATE OR REPLACE TABLE b_table (
+    id INTEGER AUTOINCREMENT,
+    type INTEGER NOT NULL CHECK (type BETWEEN 1 AND 5),
+    name VARCHAR(100),
+    created_date TIMESTAMP_NTZ DEFAULT CURRENT_TIMESTAMP(),
+    status VARCHAR(20) DEFAULT 'ACTIVE'
+);
